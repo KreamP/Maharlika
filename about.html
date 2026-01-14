@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - Maharlika Security Services</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+  body {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url("camera CCTV.jpg") no-repeat center center;
+    background-size: cover;
+  }
+
+  .fade-in {
+    animation: fadeIn 1.4s ease forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
+
+  .logo {
+    height: 50px;
+    width: auto;
+  }
+</style>
+</head>
+<body class="min-h-screen text-white flex flex-col relative">
+
+<!-- NAVBAR -->
+<nav class="w-full px-6 py-5 flex justify-between items-center fade-in z-20">
+    <div class="flex items-center gap-3">
+        <img src="maharlikalogo.png" alt="Maharlika Logo" class="logo">
+        <h1 class="font-bold text-lg tracking-wide">Maharlika Security</h1>
+    </div>
+    <div class="flex gap-6 text-sm font-medium">
+        <a href="index.html" class="hover:text-red-500">Home</a>
+        <a href="about.html" class="hover:text-red-500 font-semibold">About</a>
+        <a href="contact.html" class="hover:text-red-500">Contact</a>
+    </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main class="flex-grow flex flex-col justify-center items-center text-center px-6 fade-in z-20 mt-20">
+    <h2 class="text-5xl md:text-6xl font-bold drop-shadow-xl">About Maharlika Security</h2>
+
+    <p class="mt-6 text-lg text-gray-200 max-w-3xl">
+        Maharlika Security Services has been providing top-quality security solutions for residential and commercial properties.  
+        Our team of trained professionals ensures the safety of your property and peace of mind for you and your family.  
+        We specialize in CCTV monitoring, alarm systems, and 24/7 security patrols.
+    </p>
+
+    <p class="mt-4 text-lg text-gray-200 max-w-3xl">
+        Our mission is to deliver reliable, professional, and affordable security services that our clients can trust.  
+        With years of experience and cutting-edge technology, we are committed to protecting what matters most to you.
+    </p>
+</main>
+
+<!-- FOOTER -->
+<footer class="text-center text-sm text-gray-300 py-6 fade-in z-20">
+    © 2026 Maharlika Security Services. All rights reserved.
+</footer>
+
+</body>
+</html>
