@@ -9,84 +9,164 @@
 
 <style>
   body {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                url("camera CCTV.jpg") no-repeat center center;
+    font-family: "Inter", sans-serif;
+    background: linear-gradient(rgba(15,30,54,0.9), rgba(15,30,54,0.9)),
+                url("security.jpg") no-repeat center center;
     background-size: cover;
+    color: white;
   }
 
-  .fade-in {
-    animation: fadeIn 1.4s ease forwards;
-    opacity: 0;
+  .glass {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: all 0.3s ease;
   }
 
-  @keyframes fadeIn {
-    to { opacity: 1; }
+  .glass:hover {
+    border-color: #d4af37;
+    box-shadow: 0 0 25px rgba(212,175,55,0.6);
   }
 
-  .logo {
-    height: 50px;
-    width: auto;
+  input, textarea {
+    background: rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+
+  input:focus, textarea:focus {
+    border-color: #d4af37;
+    box-shadow: 0 0 8px rgba(212,175,55,0.5);
+  }
+
+  button {
+    background-color: #d4af37;
+    transition: all 0.3s ease;
+    color: black;
+    font-weight: 600;
+  }
+
+  button:hover {
+    background-color: #b8952f;
+    box-shadow: 0 0 15px rgba(212,175,55,0.5);
+  }
+
+  .hero-bg {
+    background: linear-gradient(rgba(15,30,54,0.9), rgba(15,30,54,0.9)),
+                url("security.jpg") no-repeat center center;
+    background-size: cover;
   }
 </style>
 </head>
-<body class="min-h-screen text-white flex flex-col relative">
+
+<body class="text-white">
 
 <!-- NAVBAR -->
-<nav class="w-full px-6 py-5 flex justify-between items-center fade-in z-20">
+<nav class="bg-[#0b1628] fixed w-full z-30 shadow-xl">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
     <div class="flex items-center gap-3">
-        <img src="maharlikalogo.png" alt="Maharlika Logo" class="logo">
-        <h1 class="font-bold text-lg tracking-wide">Maharlika Security</h1>
+      <img src="maharlikalogo.png" class="h-10">
+      <span class="text-xl font-bold tracking-wide">Maharlika Security</span>
     </div>
-    <div class="flex gap-6 text-sm font-medium">
-        <a href="index.html" class="hover:text-red-500">Home</a>
-        <a href="about.html" class="hover:text-red-500">About</a>
-        <a href="contact.html" class="hover:text-red-500 font-semibold">Contact</a>
+    <div class="space-x-6 text-sm font-semibold">
+      <a href="index.html" class="hover:text-[#d4af37]">Home</a>
+      <a href="about.html" class="hover:text-[#d4af37]">About Us</a>
+      <a href="services.html" class="hover:text-[#d4af37]">Services</a>
+      <a href="contact.html" class="text-[#d4af37] font-semibold">Contact</a>
     </div>
+  </div>
 </nav>
 
-<!-- MAIN CONTENT -->
-<main class="flex-grow flex flex-col justify-center items-center text-center px-6 fade-in z-20 mt-20">
-    <h2 class="text-5xl md:text-6xl font-bold drop-shadow-xl">Contact Us</h2>
-
-    <p class="mt-4 text-lg text-gray-200 max-w-3xl">
-        Have questions or need security services? Reach out to us and we’ll get back to you as soon as possible.
+<!-- HERO -->
+<section class="hero-bg h-96 flex items-center justify-center pt-20">
+  <div class="text-center px-6 max-w-4xl">
+    <h1 class="text-5xl md:text-6xl font-bold drop-shadow-2xl">
+      Get in Touch
+    </h1>
+    <p class="mt-6 text-lg text-gray-300">
+      Have questions or need security services? Contact us and we’ll get back to you promptly.
     </p>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="px-6 py-24">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
 
     <!-- CONTACT FORM -->
-    <form class="mt-8 w-full max-w-md flex flex-col gap-4">
-        <input type="text" required
-            placeholder="Your Name"
-            class="px-4 py-3 rounded-md bg-black/60 border border-white/40 text-white placeholder-gray-300 focus:outline-none focus:border-red-500">
-
-        <input type="email" required
-            placeholder="Email Address"
-            class="px-4 py-3 rounded-md bg-black/60 border border-white/40 text-white placeholder-gray-300 focus:outline-none focus:border-red-500">
-
-        <input type="text"
-            placeholder="Subject"
-            class="px-4 py-3 rounded-md bg-black/60 border border-white/40 text-white placeholder-gray-300 focus:outline-none focus:border-red-500">
-
-        <textarea required
-            placeholder="Your Message"
-            rows="5"
-            class="px-4 py-3 rounded-md bg-black/60 border border-white/40 text-white placeholder-gray-300 focus:outline-none focus:border-red-500"></textarea>
-
-        <button class="bg-red-600 hover:bg-red-700 transition px-6 py-3 rounded-md font-semibold">
-            Send Message
+    <div class="glass">
+      <form class="flex flex-col gap-5">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <input type="text" placeholder="Subject">
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit" class="py-3 rounded-md">
+          Send Message
         </button>
-    </form>
+      </form>
+    </div>
 
     <!-- CONTACT INFO -->
-    <div class="mt-8 text-gray-200">
-        <p>Email: info@maharlikasecurity.com</p>
-        <p>Phone: +63 912 345 6789</p>
-        <p>Address: 123 Maharlika St, Pampanga, Philippines</p>
+    <div class="glass flex flex-col justify-center gap-4 text-gray-200">
+      <h2 class="text-2xl font-bold mb-4 text-[#d4af37]">Contact Information</h2>
+      <p><strong>Email:</strong> info@maharlikasecurity.com</p>
+      <p><strong>Phone:</strong> +63 912 345 6789</p>
+      <p><strong>Address:</strong> 123 Maharlika St, Pampanga, Philippines</p>
+
+      <!-- OPTIONAL MAP PLACEHOLDER -->
+      <div class="mt-6 w-full h-64 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400">
+        Map Placeholder
+      </div>
     </div>
-</main>
+
+  </div>
+</section>
+
+<!-- 3 STEP PROCESS -->
+<section class="bg-[#0f1e36] px-6 py-24">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-14">Be Our Partner in 3 Simple Steps</h2>
+
+    <div class="grid md:grid-cols-3 gap-12">
+
+      <div class="glass p-10 rounded-2xl">
+        <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-[#d4af37] flex items-center justify-center">
+          <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" class="w-10">
+        </div>
+        <h3 class="text-xl font-bold text-[#d4af37]">CALL</h3>
+        <p class="text-gray-300 mt-3">Speak with our security consultants.</p>
+      </div>
+
+      <div class="glass p-10 rounded-2xl">
+        <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-[#d4af37] flex items-center justify-center">
+          <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" class="w-10">
+        </div>
+        <h3 class="text-xl font-bold text-[#d4af37]">MEETING</h3>
+        <p class="text-gray-300 mt-3">We analyze risks and prepare a plan.</p>
+      </div>
+
+      <div class="glass p-10 rounded-2xl">
+        <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-[#d4af37] flex items-center justify-center">
+          <img src="https://cdn-icons-png.flaticon.com/512/1995/1995470.png" class="w-10">
+        </div>
+        <h3 class="text-xl font-bold text-[#d4af37]">DEPLOYMENT</h3>
+        <p class="text-gray-300 mt-3">We secure your people and assets.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- FOOTER -->
-<footer class="text-center text-sm text-gray-300 py-6 fade-in z-20">
-    © 2026 Maharlika Security Services. All rights reserved.
+<footer class="bg-[#050b16] text-center text-gray-400 py-12">
+  <img src="maharlikalogo.png" class="h-12 mx-auto mb-4">
+  © 2026 Maharlika Security Services. All rights reserved.
 </footer>
 
 </body>
